@@ -2,8 +2,16 @@ import './AnimatedLetters.scss'
 
 import React from 'react'
 
-const f = () => {
-  return <div>f</div>
+const AnimatedLetters = ({ letterClass, strArray, idx }) => {
+  return (
+    <span>
+      {strArray.map((char, i) => (
+        <span key={char + i} className={`${letterClass}_${i + idx}`}>
+          {char}
+        </span>
+      ))}
+    </span>
+  )
 }
 
-export default f
+export default AnimatedLetters
